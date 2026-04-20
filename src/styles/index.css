@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+/* Tailwind v4 theme — defines both CSS vars and utility classes */
+@theme {
+  --color-bg-base:       #0a0612;
+  --color-bg-elevated:   #13091f;
+  --color-purple-primary: #a855f7;
+  --color-purple-glow:   #c084fc;
+  --color-purple-deep:   #6b21a8;
+  --color-text-primary:  #f5f3ff;
+  --color-text-secondary: #c4b5d4;
+  --color-text-muted:    #8b7aa8;
+
+  --font-sans:    'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+}
+
+/* Non-Tailwind CSS vars (glass, gradients, etc.) */
+:root {
+  --bg-base:        #0a0612;
+  --bg-elevated:    #13091f;
+  --bg-glass:       rgba(30, 15, 55, 0.45);
+  --purple-primary: #a855f7;
+  --purple-glow:    #c084fc;
+  --purple-deep:    #6b21a8;
+  --text-primary:   #f5f3ff;
+  --text-secondary: #c4b5d4;
+  --text-muted:     #8b7aa8;
+  --gradient-hero:  linear-gradient(135deg, #6b21a8 0%, #a855f7 50%, #ec4899 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Visible focus rings — purple, 2px, 4px offset */
+:focus-visible {
+  outline: 2px solid var(--purple-primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--purple-deep);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple-primary);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
